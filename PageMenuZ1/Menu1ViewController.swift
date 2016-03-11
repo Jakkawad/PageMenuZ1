@@ -8,13 +8,26 @@
 
 import UIKit
 
-class Menu1ViewController: UIViewController {
+class Menu1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1")
+        
+        return cell1!
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("Menu1")
+        
     }
 
     override func didReceiveMemoryWarning() {
